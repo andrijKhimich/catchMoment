@@ -1,0 +1,484 @@
+.hero {
+  min-height: 96vw;
+  padding-top: 270px;
+
+  @include d(1680) {
+    padding-top: 180px;
+  }
+
+  @include d(1366) {
+    padding-top: 140px;
+  }
+
+  @include d(767) {
+    background-image: url(../img/home/hero-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin-bottom: 40px;
+    min-height: 120vw;
+  }
+
+  @include d(480) {
+    min-height: 150vw;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    transform: translate(0, 0);
+    transition: transform 1s ease;
+
+  }
+}
+
+
+.mountains {
+  position: absolute;
+  width: 100%;
+  top: 11vw;
+  left: 0;
+  z-index: 2;
+  transform: scale(1);
+
+  @include d(767) {
+    display: none;
+  }
+}
+
+.sky {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  @include d(767) {
+    display: none;
+  }
+
+}
+
+.skier {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  transition: transform 1s ease;
+
+  @include d(767) {
+    display: none;
+  }
+}
+
+.services {
+  z-index: 2;
+  margin-top: -212px;
+  padding-bottom: 150px;
+
+  @include d(991) {
+    margin-top: -150px;
+    padding-bottom: 80px;
+  }
+
+  @include d(767) {
+    margin-top: 0;
+  }
+
+  .col-md-4 {
+    &:first-child {
+      .services-card {
+        margin-top: 23px;
+
+        @include d(991) {
+          margin-top: 10px;
+        }
+
+        @include d(767) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      .services-card {
+        margin-top: 50px;
+
+        @include d(991) {
+          margin-top: 30px;
+        }
+
+        @include d(767) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      .services-card {
+        &::before {
+          content: "";
+          width: 1px;
+          // height: 100%;
+          background-color: $secondary;
+          position: absolute;
+          top: 0;
+          left: -15px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: $primary;
+    margin-bottom: 80px;
+  }
+
+  &-card {
+    color: $secondary;
+    position: relative;
+
+    @include d(767) {
+      margin-bottom: 50px;
+    }
+
+    &__content {
+      margin-bottom: 128px;
+
+      @include d(1280) {
+        margin-bottom: 100px;
+      }
+
+      @include d(991) {
+        margin-bottom: 60px;
+      }
+
+      @include d(767) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__img {
+      position: relative;
+      overflow: hidden;
+      // height: 208px;
+      padding-bottom: 50%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // transform: translate(-50%, -150%) scale(1.2);
+      }
+    }
+  }
+}
+
+.full {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 100px;
+
+  @include d(991) {
+    padding-bottom: 80px;
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 45%;
+
+    @include d(767) {
+      padding-bottom: 60%;
+    }
+
+    // height: 592px;
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.coaches {
+  z-index: 1;
+  background-color: $white;
+  &__title {
+    color: $primary;
+    margin-bottom: 80px;
+  }
+
+  &__content {
+    color: $secondary;
+  }
+
+  .col-md-6 {
+    &:not(:first-child) {
+      .coaches-card {
+        &::before {
+          content: "";
+          width: 1px;
+          // height: 100%;
+          background-color: $secondary;
+          position: absolute;
+          top: 0;
+          left: -15px;
+        }
+      }
+    }
+  }
+
+  &-card {
+    position: relative;
+    margin-bottom: 60px;
+
+    &__img {
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      // height: 304px;
+      padding-bottom: 47%;
+
+      @include d(767) {
+        padding-bottom: 60%;
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        filter: blur(0);
+        transition: filter $hover-duration $timing;
+      }
+
+      &:hover {
+        .coaches-card_hover {
+          opacity: 1;
+          pointer-events: initial;
+        }
+
+        img {
+          filter: blur(5px);
+        }
+      }
+    }
+
+    &__subcontent {
+      position: relative;
+      z-index: 1;
+    }
+
+    &_hover {
+      padding: 50px 30px;
+      color: $white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $hover-duration $timing;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(../img/home/texture.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: .5;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.picture {
+  padding-bottom: 50px;
+  transition: transform 2s ease;
+}
+
+.news {
+  padding-bottom: 180px;
+
+  @include d(1280) {
+    padding-bottom: 100px;
+  }
+
+  @include d(991) {
+    padding-bottom: 80px;
+  }
+
+  &-card {
+    width: 304px;
+    height: 304px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 33px;
+
+    @include d(1280) {
+      width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      .news-card_hover {
+        opacity: 1;
+        pointer-events: initial;
+      }
+
+      .news-card__img img {
+        filter: blur(5px);
+      }
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(0);
+      transition: filter $hover-duration $timing;
+    }
+
+    &__subcontent {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__subtitle {
+      display: flex;
+      align-items: center;
+      margin-bottom: 17px;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+        margin-right: 16px;
+      }
+    }
+
+    &_hover {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px 16px;
+      color: $white;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $hover-duration $timing;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(../img/home/texture.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: .5;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.contacts {
+  padding-bottom: 46px;
+
+  &__title {
+    margin-bottom: 66px;
+
+    @include d(767) {
+      display: none;
+    }
+  }
+
+  &__social {
+    @include d(767) {
+      display: flex;
+    }
+  }
+
+  &-box {
+    color: $secondary;
+    margin-bottom: 60px;
+
+    @include d(767) {
+      flex: 0 0 50%;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: underline;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+
+  &-form {
+    padding-top: 8px;
+    max-width: 416px;
+
+    @include d(767) {
+      max-width: 100%;
+      padding-top: 0;
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.social-list {
+  display: flex;
+  align-items: center;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+}

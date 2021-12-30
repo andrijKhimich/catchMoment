@@ -1,0 +1,231 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transform: translate(0, 0);
+  padding-top: 60px;
+  transition: transform 1s ease;
+
+  @include d(1280) {
+    padding-top: 20px;
+  }
+
+  &_inner {
+    position: fixed;
+    padding-top: 20px;
+    transform: translate(0, 0);
+
+    .btn {
+      min-width: 124px;
+      height: 48px;
+    }
+
+    .nav-list li a {
+      color: $secondary;
+      font-weight: 500;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+
+  &.hidden {
+    transform: translate(0, -100%);
+  }
+
+  &.sticky {
+    position: fixed;
+    padding-top: 20px;
+    transform: translate(0, 0);
+
+    .btn {
+      min-width: 124px;
+      height: 48px;
+    }
+
+    .nav-list li a {
+      color: $secondary;
+      font-weight: 500;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-menu {
+    display: flex;
+    align-items: center;
+
+    @include d(991) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 50vw;
+      height: 100vh;
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50vw, 0);
+      opacity: 0;
+      transition: opacity $hover-duration $timing, transform $hover-duration $timing;
+    }
+
+    @include d(767) {
+      width: 100vw;
+      transform: translate(-100vw, 0);
+    }
+
+    &.open {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    .btn {
+      @include d(991) {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translate(-50%, -0);
+
+        @include d(767) {
+          transform: translate(-100%, -0);
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  margin-left: auto;
+  margin-right: 180px;
+  font-size: 16px;
+
+  @include d(1280) {
+    margin-right: 100px;
+  }
+
+  @include d(991) {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+
+    @include d(991) {
+      flex-direction: column;
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-right: 65px;
+
+        @include d(991) {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+      }
+
+      a {
+        color: $white;
+        padding: 10px;
+        transition: color $hover-duration $timing;
+
+        &:hover {
+          color: $primary;
+        }
+
+        @include d(991) {
+          color: $secondary;
+        }
+
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+}
+
+.burger {
+  position: relative;
+  width: 30px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  display: none;
+
+  &__item {
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: $primary;
+    display: block;
+    position: absolute;
+    left: 0;
+    transition: $hover-duration $timing;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      margin-top: -2px;
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+  }
+
+  @include d(991) {
+    display: inline-block;
+  }
+
+  &.open {
+    .burger__item {
+      &:first-child {
+        transform: rotate(45deg);
+        top: 10px;
+      }
+
+      &:nth-child(2) {
+        width: 0;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+        bottom: 10px;
+      }
+    }
+  }
+}

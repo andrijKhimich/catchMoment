@@ -1,1 +1,71 @@
 // footer styles
+.footer {
+  position: relative;
+  height: 27vw;
+
+  // overflow: hidden;
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+  }
+
+  &__girl {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-60%, 0);
+    z-index: 1;
+    max-width: 720px;
+  }
+}
+
+.copyright {
+  color: $primary;
+  font-size: 108px;
+  line-height: 1.27em;
+  position: absolute;
+  bottom: 5vw;
+  left: 0;
+  font-weight: 900;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+
+  @include d(1440) {
+    bottom: 3vw;
+  }
+
+  @include d(991) {
+    bottom: 30px;
+    font-size: 90px;
+  }
+
+  @include d(800) {
+    font-size: 70px;
+    bottom: 20px;
+
+  }
+
+  @include d(767) {
+    font-size: 50px;
+  }
+
+  @include d(575) {
+    font-size: 40px;
+    bottom: 15px;
+  }
+
+  @include d(400) {
+    font-size: 36px;
+    bottom: 10px;
+  }
+
+  @include d(340) {
+    font-size: 30px;
+    bottom: 10px;
+  }
+}

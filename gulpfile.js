@@ -33,7 +33,7 @@ gulp.task("html", function () {
   return gulp
     .src(["src/html/**/*.html", "!src/html/**/_*.html"])
     .pipe(fileInclude())
-    .pipe(webphtml())
+    // .pipe(webphtml())
     .pipe(gulp.dest("dist"))
     .pipe(
       browserSync.reload({
@@ -61,12 +61,12 @@ gulp.task("sass", function () {
       })
     )
     // .pipe(sourcemaps.write())
-    .pipe(
-      webpcss({
-        webpClass: ".webp",
-        noWebpClass: ".no-webp",
-      })
-    )
+    // .pipe(
+    //   webpcss({
+    //     webpClass: ".webp",
+    //     noWebpClass: ".no-webp",
+    //   })
+    // )
     .pipe(gulp.dest("dist/css"))
     .pipe(
       browserSync.reload({
@@ -88,19 +88,17 @@ gulp.task("js", function () {
 
 
       // "node_modules/jquery-nice-select/js/jquery.nice-select.min.js",
-      // "src/libs/datepicker/dist/js/datepicker-full.min.js",
       // "src/libs/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js",
-      // "src/libs/sticky-sidebar/dist/sticky-sidebar.min.js",
 
-      // "src/libs/bootstrap-4.6.0/dist/js/bootstrap.min.js",
+      "src/libs/scrollspy/dist/vanillajs-scrollspy.js",
 
       "src/js/script.js",
     ])
-    // .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(uglify())
     .pipe(concat("script.min.js"))
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("dist/js"))
     .pipe(
       browserSync.reload({
@@ -123,39 +121,39 @@ gulp.task("js", function () {
 gulp.task("images", function () {
   return (
     gulp
-      .src("src/img/**/*")
-      // Caching images that ran through imagemin
-      .pipe(
-        cache(
-          imagemin({
-            interlaced: true,
-          })
-        )
-      )
-      .pipe(gulp.dest("dist/img"))
-      .pipe(
-        browserSync.reload({
-          stream: true,
+    .src("src/img/**/*")
+    // Caching images that ran through imagemin
+    .pipe(
+      cache(
+        imagemin({
+          interlaced: true,
         })
       )
-  );
-});
-
-gulp.task("webp", function () {
-  return gulp
-    .src("src/img/**/*.*")
-    .pipe(
-      webp({
-        quality: 70,
-      })
     )
-    .pipe(gulp.dest("dist/img/"))
+    .pipe(gulp.dest("dist/img"))
     .pipe(
       browserSync.reload({
         stream: true,
       })
-    );
+    )
+  );
 });
+
+// gulp.task("webp", function () {
+//   return gulp
+//     .src("src/img/**/*.*")
+//     .pipe(
+//       webp({
+//         quality: 70,
+//       })
+//     )
+//     .pipe(gulp.dest("dist/img/"))
+//     .pipe(
+//       browserSync.reload({
+//         stream: true,
+//       })
+//     );
+// });
 
 gulp.task("svgSprite", function () {
   return gulp
@@ -201,7 +199,7 @@ gulp.task("fonts", function () {
 
 gulp.task("watch", function () {
   gulp.watch("src/html/**/*.html", gulp.parallel("html"));
-  gulp.watch("src/sass/**/*.scss", gulp.parallel("sass"));
+  gulp.watch("src/scss/**/*.scss", gulp.parallel("sass"));
   // gulp.watch("src/libs/bootstrap-4.6.0/scss/*.scss", gulp.parallel("scss"));
   gulp.watch("src/js/script.js", gulp.parallel("js"));
   // gulp.watch("src/*.*", gulp.parallel("files"));
@@ -228,7 +226,7 @@ gulp.task(
     "js",
     "fonts",
     "images",
-    "webp",
+    // "webp",
     // "files",
     "svgSprite",
     "browser-sync"

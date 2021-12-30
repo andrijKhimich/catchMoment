@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <title>Project | Home</title>
@@ -8,12 +8,414 @@
 
 <body>
   <div class="main-wrapper home-page js-fadeIn">
+    <div class="preloader showed">
+      <span class="preloader__item"><span class="preloader__item_inner">Самое</span></span>
+      <span class="preloader__item"><span class="preloader__item_inner">Время</span></span>
+      <span class="preloader__item"><span class="preloader__item_inner">Вставать</span></span>
+      <span class="preloader__item"><span class="preloader__item_inner">На лыжи</span></span>
+    </div>
     @@include('components/_header.html')
     <main class="main">
-      <section class="section"></section>
-      <section class="section"></section>
-      <section class="section"></section>
-      <section class="section"></section>
+      <section class="section hero">
+        <div class="sky">
+          <img src="img/home/sky.jpg" alt="sky">
+        </div>
+        <div class="mountains">
+          <img src="img/home/mountains.png" alt="mountains">
+        </div>
+        <div class="skier">
+          <img src="img/home/skier.png" alt="skier">
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="hero__title">
+                <h1 class="title-1">
+                  Лови
+                  <span>момент</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section services js-scroll hidden" id="services">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="section__title js-show-title">
+                <h2 class="title-2">Наши услуги</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="services-card js-show-services">
+                <div class="services-card__title">
+                  <h3 class="title-3">Лыжероллеры</h3>
+                </div>
+                <div class="services-card__content">
+                  <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
+                </div>
+                <div class="services-card__img js-show-img">
+                  <img src="img/home/services-1.jpg" alt="Лыжероллеры">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="services-card js-show-services">
+                <div class="services-card__title">
+                  <h3 class="title-3">ОФП</h3>
+                </div>
+                <div class="services-card__content">
+                  <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
+                </div>
+                <div class="services-card__img js-show-img">
+                  <img src="img/home/services-2.jpg" alt="ОФП">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="services-card js-show-services">
+                <div class="services-card__title">
+                  <h3 class="title-3">беговые лыжи</h3>
+                </div>
+                <div class="services-card__content">
+                  <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
+                </div>
+                <div class="services-card__img js-show-img">
+                  <img src="img/home/services-3.jpg" alt="Лыжероллеры">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section full js-scroll hidden">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="full__img js-show-full">
+                <img src="img/home/full.jpg" alt="full">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section coaches js-scroll hidden" id="coaches">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="section__title js-show-title">
+                <h2 class="title-2">Тренеры</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="coaches-card js-show-coaches">
+                <div class="coaches-card__img">
+                  <img src="img/home/coach-1.jpg" alt="Назарова Ольга">
+                  <div class="coaches-card_hover">
+                    <div class="coaches-card__subcontent">
+                      <h4 class="title-4">Ведёт тренировки</h4>
+                      <p>Беговые лыжи</p>
+                      <p>Лыжероллеры</p>
+                      <p>ОФП</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="coaches__content js-show-text">
+                  <h3 class="title-3">Назарова Ольга</h3>
+                  <p>Мастер спорта по лыжным гонкам!</p>
+                  <p>Тренерский стаж 8 лет</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="coaches-card js-show-coaches">
+                <div class="coaches-card__img">
+                  <img src="img/home/coach-2.jpg" alt="Назарова Ирина">
+                  <div class="coaches-card_hover">
+                    <div class="coaches-card__subcontent">
+                      <h4 class="title-4">Ведёт тренировки</h4>
+                      <p>Беговые лыжи</p>
+                      <p>Лыжероллеры</p>
+                      <p>ОФП</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="coaches__content js-show-text">
+                  <h3 class="title-3">Назарова Ирина</h3>
+                  <p>Мастер спорта по лыжным гонкам!</p>
+                  <p>Тренерский стаж 8 лет</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section picture js-scroll hidden">
+        <img src="img/home/picture.png" alt="picture">
+      </section>
+      <section class="section news js-scroll hidden" id="news">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="section__title js-show-title">
+                <h2 class="title-2">Новости</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row js-show-title">
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-1.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-2.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-3.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-4.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-5.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-6.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-7.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="news-card">
+                <div class="news-card__img">
+                  <img src="img/home/news-8.jpg" alt="news">
+                </div>
+                <div class="news-card_hover">
+                  <div class="news-card__subcontent">
+                    <div class="news-card__subtitle">
+                      <div class="news-card__icon">
+                        <img src="img/svg/like.svg" alt="like">
+                        <p>234</p>
+                      </div>
+                      <div class="news-card__icon">
+                        <img src="img/svg/comment.svg" alt="comment">
+                        <p>130</p>
+                      </div>
+                    </div>
+                    <p>В Москве уже окончательно установилась зимняя погода ❄️🌨 значит самое время вставать на
+                      лыжи!⛷😉☝🏻</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section contacts js-scroll hidden" id="contacts">
+        <div class="container js-show-title">
+          <div class="row">
+            <div class="col-md-6 col-lg-5 offset-lg-1 order-2 order-md-0">
+              <div class="section__title contacts__title">
+                <h2 class="title-2">Контакты</h2>
+              </div>
+              <div class="contacts__social">
+                <div class="contacts-box">
+                  <p>Телефон</p>
+                  <a href="tel:+79175802361">+79175802361</a>
+                </div>
+                <div class="contacts-box">
+                  <p>соц. сети </p>
+                  <ul class="social-list">
+                    <li>
+                      <a href="#">
+                        <svg class="svg-icon">
+                          <use xlink:href="img/svg/sprite-svg/sprite.svg#instagram">
+                          </use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="svg-icon">
+                          <use xlink:href="img/svg/sprite-svg/sprite.svg#whatsap">
+                          </use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-5 offset-lg-1">
+              <div class="contacts-form">
+                <h3 class="title-3 contacts-form__title">Напиши нам</h3>
+                <form>
+                  <div class="form-box">
+                    <input autocomplete="off" placeholder="Имя" type="text" class="form-input" id="name">
+                    <label class="form-label" for="name">Имя</label>
+                  </div>
+                  <div class="form-box">
+                    <input autocomplete="off" placeholder="Почта" type="text" class="form-input" id="email">
+                    <label class="form-label" for="email">Почта</label>
+                  </div>
+                  <div class="form-box">
+                    <textarea autocomplete="off" placeholder="Сообщение" id="text" class="form-input" rows="5"></textarea>
+                    <label class="form-label" for="text">Сообщение</label>
+                  </div>
+                  <button class="btn">
+                    <span>Отправить</span>
+                    <span>Отправить</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     @@include('components/_footer.html')
   </div>

@@ -2,8 +2,13 @@
 $white: #ffffff;
 $black: #000000;
 $textColor: $black;
-$primary: #ff0000;
+$primary: #F92626;
+$primaryHover: #FF9393;
+$secondary: #012B99;
+$gray-100: #E0E0E0;
+$gray-200: #A7A7A7;
+
 // timing
 $hover-duration: .5s;
 $duration: .8s;
-$timing: cubic-bezier(.17,.67,.55,1.05);
+$timing: ease;
