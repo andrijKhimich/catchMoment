@@ -211,6 +211,7 @@
 .coaches {
   z-index: 1;
   background-color: $white;
+
   &__title {
     color: $primary;
     margin-bottom: 80px;
@@ -418,6 +419,8 @@
 
 .contacts {
   padding-bottom: 46px;
+  position: relative;
+  z-index: 1;
 
   &__title {
     margin-bottom: 66px;

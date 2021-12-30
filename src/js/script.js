@@ -37,7 +37,8 @@ function showOnScroll(scrollValue) {
   $('.js-scroll-footer').each(function () {
     let elem = $(this);
     let sectionPos = elem.offset().top;
-    let windowPos = $(window).scrollTop() + $(window).height() - 300;
+    let windowPos = $(window).scrollTop() + $(window).height() + 500;
+    console.log(sectionPos, windowPos);
     if (sectionPos < windowPos) {
       elem.removeClass('hidden');
     }

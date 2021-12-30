@@ -2,7 +2,9 @@
 .footer {
   position: relative;
   height: 27vw;
-
+  @include d(991) {
+    height: 81vw;
+  }
   // overflow: hidden;
   &__img {
     position: absolute;
