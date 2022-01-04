@@ -32,7 +32,7 @@
               <div class="hero__title">
                 <h1 class="title-1">
                   Лови
-                  <span>момент</span>
+                  <strong>момент</strong>
                 </h1>
               </div>
             </div>
@@ -42,53 +42,87 @@
       <section class="section services js-scroll hidden" id="services">
         <div class="container">
           <div class="row">
-            <div class="col-12">
+            <div class="col-lg-8">
               <div class="section__title js-show-title">
                 <h2 class="title-2">Наши услуги</h2>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="slider-nav js-show-title">
+                <button class="slider-btn slider-btn_prev">
+                  <svg class="svg-arrow">
+                    <use xlink:href="img/svg/sprite-svg/sprite.svg#arrow-left">
+                    </use>
+                  </svg>
+                  Назад
+                </button>
+                <button class="slider-btn slider-btn_next">
+                  Вперед
+                  <svg class="svg-arrow">
+                    <use xlink:href="img/svg/sprite-svg/sprite.svg#arrow-right">
+                    </use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="services-slider" id="servicesSlider">
+                <div class="services__item">
+                  <div class="services-card js-show-services">
+                    <div class="services-card__title">
+                      <h3 class="title-3">Лыжероллеры</h3>
+                    </div>
+                    <div class="services-card__content">
+                      <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
+                    </div>
+                    <div class="services-card__img js-show-img">
+                      <img src="img/home/services-1.jpg" alt="Лыжероллеры">
+                    </div>
+                  </div>
+                </div>
+                <div class="services__item">
+                  <div class="services-card js-show-services">
+                    <div class="services-card__title">
+                      <h3 class="title-3">ОФП</h3>
+                    </div>
+                    <div class="services-card__content">
+                      <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
+                    </div>
+                    <div class="services-card__img js-show-img">
+                      <img src="img/home/services-2.jpg" alt="ОФП">
+                    </div>
+                  </div>
+                </div>
+                <div class="services__item">
+                  <div class="services-card js-show-services">
+                    <div class="services-card__title">
+                      <h3 class="title-3">беговые лыжи</h3>
+                    </div>
+                    <div class="services-card__content">
+                      <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
+                    </div>
+                    <div class="services-card__img js-show-img">
+                      <img src="img/home/services-3.jpg" alt="Лыжероллеры">
+                    </div>
+                  </div>
+                </div>
+                <div class="services__item">
+                  <div class="services-card js-show-services">
+                    <div class="services-card__title">
+                      <h3 class="title-3">беговые лыжи</h3>
+                    </div>
+                    <div class="services-card__content">
+                      <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
+                    </div>
+                    <div class="services-card__img js-show-img">
+                      <img src="img/home/services-3.jpg" alt="Лыжероллеры">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="services-card js-show-services">
-                <div class="services-card__title">
-                  <h3 class="title-3">Лыжероллеры</h3>
-                </div>
-                <div class="services-card__content">
-                  <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
-                </div>
-                <div class="services-card__img js-show-img">
-                  <img src="img/home/services-1.jpg" alt="Лыжероллеры">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="services-card js-show-services">
-                <div class="services-card__title">
-                  <h3 class="title-3">ОФП</h3>
-                </div>
-                <div class="services-card__content">
-                  <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
-                </div>
-                <div class="services-card__img js-show-img">
-                  <img src="img/home/services-2.jpg" alt="ОФП">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="services-card js-show-services">
-                <div class="services-card__title">
-                  <h3 class="title-3">беговые лыжи</h3>
-                </div>
-                <div class="services-card__content">
-                  <p>Тренировки на свежем воздухе! Тренируемся в парках Москвы и Подмосковья или у вас дома!</p>
-                </div>
-                <div class="services-card__img js-show-img">
-                  <img src="img/home/services-3.jpg" alt="Лыжероллеры">
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
       <section class="section full js-scroll hidden">
@@ -403,7 +437,8 @@
                     <label class="form-label" for="email">Почта</label>
                   </div>
                   <div class="form-box">
-                    <textarea autocomplete="off" placeholder="Сообщение" id="text" class="form-input" rows="5"></textarea>
+                    <textarea autocomplete="off" placeholder="Сообщение" id="text" class="form-input"
+                      rows="5"></textarea>
                     <label class="form-label" for="text">Сообщение</label>
                   </div>
                   <button class="btn">
