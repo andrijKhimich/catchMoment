@@ -84,12 +84,27 @@
   @include d(767) {
     margin-top: 0;
   }
+
   &-slider {
     display: flex;
+
+    @include d(767) {
+      flex-wrap: wrap;
+    }
   }
+
   .services__item {
-    max-width: 33.33%;
+    width: 33.33%;
     padding: 0 15px;
+
+    @include d(767) {
+      width: 50%;
+    }
+
+    @include d(575) {
+      width: 100%;
+    }
+
     &:first-child {
       .services-card {
         margin-top: 23px;

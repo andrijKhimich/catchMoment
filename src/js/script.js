@@ -64,14 +64,18 @@ function showContent() {
 
 $(document).ready(function () {
   if ($('.inner-page').length) {
-    setInnerHeader();
+    // setInnerHeader();
+    $(".header").hide();
     $(".footer").removeClass("hidden");
   } else {
     setHomeHeader();
   }
 
   showContent();
-  hidePreloader();
+
+  if ($(!".inner-page")) {
+    hidePreloader();
+  }
 
   hamburger.click(function () {
     if ($(this).hasClass('open')) {
@@ -87,7 +91,8 @@ $(document).ready(function () {
     scrollspy.init();
   }
 
-  if ($(".services-card").length > 3) {
+  if ($(".services__item").length > 3) {
+    $('.slider-nav').css("display", "flex");
     const servicesSlider = $("#servicesSlider");
     servicesSlider.slick({
       dots: false,
@@ -113,11 +118,43 @@ $(document).ready(function () {
       ]
     });
   }
+  let scrollValue = $(this).scrollTop();
+  showOnScroll(scrollValue);
+
+
+  function openPopup() {
+    $(".popup-wrapper").show();
+  }
+
+  function closePopup() {
+    $(".popup-wrapper").hide();
+  }
+
+  const modalBtn = $("#modalBtn");
+  modalBtn.click(function () {
+    closePopup();
+  });
+
+  var wpcf7Elm = document.querySelector('.wpcf7');
+
+
+
+  // wpcf7Elm.addEventListener('wpcf7invalid', function () {
+  //   alert("error");
+  // }, false);
+
+  wpcf7Elm.addEventListener('wpcf7mailsent', function (e) {
+    openPopup();
+  }, false);
+
+  // wpcf7Elm.addEventListener('wpcf7submit', function (event) {
+  //   openPopup();
+  // }, false);
 });
 
 
 $(window).scroll(function () {
-  const scrollValue = $(this).scrollTop();
+  let scrollValue = $(this).scrollTop();
   showOnScroll(scrollValue);
   scrollValue >= 1 ? closeMenu() : null;
 

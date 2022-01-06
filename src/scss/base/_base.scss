@@ -425,6 +425,10 @@ textarea {
 .inner-page {
   height: 100vh;
 
+  .preloader {
+    display: none;
+  }
+
   .main {
     height: 100%;
   }
@@ -485,9 +489,9 @@ textarea {
 }
 
 .slider-nav {
-  display: flex;
   align-items: center;
   margin: 30px 0;
+  display: none;
 }
 
 .slider-btn {
@@ -506,5 +510,125 @@ textarea {
     .svg-arrow {
       fill: $primary;
     }
+  }
+}
+
+.sbi_photo {
+  transition: all .4s ease;
+}
+
+.sbi_photo_wrap {
+  &:hover {
+    img {
+      filter: blur(3px);
+    }
+
+    .sbi-screenreader {
+      opacity: 1 !important;
+      pointer-events: initial !important;
+      z-index: 1;
+    }
+
+    .sbi_photo {
+      &::before {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+.sbi_photo {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/home/texture.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+.sbi-screenreader {
+  text-indent: inherit !important;
+  position: absolute !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  padding: 25px 16px !important;
+  color: $white !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity $hover-duration $timing !important;
+  width: 100% !important;
+  height: 100% !important;
+  line-height: inherit !important;
+  text-align: none !important;
+  overflow: hidden !important;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  padding: 20px;
+  z-index: 100;
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 11px 14px rgba(1, 43, 153, 0.22);
+
+  .title-4 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
+  &-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($secondary, .4);
+    z-index: 100;
+    display: none;
+  }
+}
+
+.wpcf7-response-output {
+  display: none !important;
+}
+
+.wpcf7-spinner {
+  background-color: rgba($secondary, .4);
+
+  &::before {
+    background-color: $primary;
+  }
+}
+
+.wpcf7-form.invalid {
+  .form-input {
+    border-bottom: 2px solid $primary;
   }
 }
